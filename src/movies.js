@@ -1,14 +1,37 @@
 // Iteration 1: All directors? - Get the array of all directors.
-// _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors. How could you "clean" a bit this array and make it unified (without duplicates)?
+const getAllDirectors = (arr) => {
+  let result = [];
+  arr.map((movie) => result.push(movie.director));
+  return result;
+};
 
+const howManyMovies = (arr) => {
+  return arr.filter(
+    (movies) =>
+      movies.director == "Steven Spielberg" && movies.genre.includes("Drama")
+  ).length;
+};
+
+//
+
+// _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors. How could you "clean" a bit this array and make it unified (without duplicates)?
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
+const ratesAverage = (arr) => {
+  let ratings = arr.map((films) => films.rate);
 
+  sum = ratings.reduce((acc, curr) => acc + curr);
+  average = Number((sum / arr.length).toFixed(2));
+  return average;
+};
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-
+const orderByYear = (arr) => {
+  let year = arr.map((film) => film.year);
+  return year.sort((a, b) => a - b);
+};
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
